@@ -1,12 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feed - Localiza Pet</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fffbf6; /* Um tom de amarelo claro */
+    }
+    .container {
+      width: 100%;
+      max-width: 800px;
+      margin: 50px auto;
+      background-color: #fff; /* Fundo branco */
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #ff9800; /* Laranja */
+    }
+    .gallery {
+      margin-top: 20px;
+    }
+    .gallery img {
+      display: block;
+      margin: 10px auto;
+      width: 80%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 5px;
+    }
+    .photo-info {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    input[type="file"],
+    input[type="text"],
+    input[type="datetime-local"] {
+      width: calc(100% - 22px);
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+      background-color: #ff9800; /* Laranja */
+      color: #fff;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #f57c00; /* Laranja mais escuro */
+    }
+  </style>
 </head>
 <body>
-    <h1>Ola, Mundo!</h1>
-    
+  <div class="container">
+    <h2>Feed - Localiza Pet</h2>
+    <div class="upload-form">
+      <h3>Envie a sua foto:</h3>
+      <form action="#" method="post" enctype="multipart/form-data">
+        <input type="file" name="photo" accept="image/*" required>
+        <input type="text" name="location" placeholder="Localização (ex: Rua Nome da Rua, Cidade)" required>
+        <input type="datetime-local" name="date-time" required>
+        <input type="submit" value="Enviar Foto">
+      </form>
+    </div>
+    <div class="gallery">
+      <div class="photo-info">
+        <img src="exemplo1.jpg" alt="Exemplo 1">
+        <p>Localização: Rua Nome da Rua, Cidade</p>
+        <p>Data/Hora: 2024-03-25 12:00</p>
+      </div>
+      <div class="photo-info">
+        <img src="exemplo2.jpg" alt="Exemplo 2">
+        <p>Localização: Rua Outra Rua, Cidade</p>
+        <p>Data/Hora: 2024-03-25 13:30</p>
+      </div>
+      <div class="photo-info">
+        <img src="exemplo3.jpg" alt="Exemplo 3">
+        <p>Localização: Rua Mais Uma Rua, Cidade</p>
+        <p>Data/Hora: 2024-03-25 14:45</p>
+      </div>
+      <!-- Você pode adicionar mais fotos e informações aqui -->
+    </div>
+  </div>
 </body>
 </html>
