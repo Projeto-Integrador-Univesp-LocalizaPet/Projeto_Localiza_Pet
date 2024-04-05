@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Localiza Pet - Animais Perdidos</title>
+    <style>
+        /* Estilos gerais */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F4D882; /* Fundo  */
+            color: #333; /* Texto preto */
+        }
+        /* Barra de navegação */
+        .navbar {
+            background-color: #f76c24; /* Laranja */
+            overflow: hidden;
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        /* Conteúdo principal */
+        .container {
+            padding: 20px;
+        }
+        /* Formulário para carregar fotos */
+        .upload-form {
+            margin-top: 20px;
+        }
+        .upload-form input[type="text"],
+        .upload-form input[type="date"],
+        .upload-form input[type="file"] {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .upload-form button {
+            background-color: #f76c24;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        /* Feed de imagens de animais perdidos */
+        .lost-pets-feed {
+            margin-top: 20px;
+            height: 240px;
+            width: 200px;
+        }
+        .lost-pet {
+            border: 1px solid #f76c24; /* Borda laranja */
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .lost-pet img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#">Início</a>
+        <a href="#animals">Animais Perdidos</a>
+        <a href="#about">Sobre Nós</a>
+        <a href="#">Login</a>
+    </div>
+    <div class="container">
+        <h1 style="font-family: 'Segoe UI', sans-serif;">Localiza Pet</h1>
+        <p>Encontre o seu novo companheiro de quatro patas.</p>
+
+        <!-- Formulário para carregar fotos -->
+        <div class="upload-form">
+            <h2>Relate um Animal Perdido</h2>
+            <input type="text" placeholder="Localização (Rua, Bairro)">
+            <input type="date">
+            <input type="file">
+            <button>Carregar Foto</button>
+        </div>
+
+        <!-- Feed de imagens de animais perdidos -->
+        <div class="lost-pets-feed">
+            <!-- Aqui você pode exibir as imagens carregadas pelos usuários -->
+            <div class="lost-pet">
+                <img src="caminho/para/imagem1.jpg" alt="Animal Perdido 1">
+                <p>Localização: Rua X, Bairro Y</p>
+                <p>Visto pela última vez em: 01/03/2024</p>
+            </div>
+            <!-- Adicione mais blocos de imagens conforme necessário -->
+        </div>
+
+        <!-- Página Sobre Nós -->
+        <div id="about">
+            <h2>Sobre Nós</h2>
+            <p>Alunos da UNIVEP de Marília se uniram para criar o Localiza Pet, um site dedicado a ajudar ONGs a divulgarem animais disponíveis para adoção. Nosso objetivo é conectar animais em busca de um lar com pessoas amorosas e responsáveis. Junte-se a nós nessa missão!</p>
+        </div>
+    </div>
+</body>
+</html>
