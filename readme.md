@@ -1,0 +1,1 @@
+Alterado o html para reconhecer apenas imagem
