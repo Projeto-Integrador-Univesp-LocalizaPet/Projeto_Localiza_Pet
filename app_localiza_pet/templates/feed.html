@@ -1,48 +1,60 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Localiza Pet - Animais Perdidos</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Localiza Pet</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="navbar">
-        <a href="#">Início</a>
-        <a href="#animals">Animais Perdidos</a>
-        <a href="#about">Sobre Nós</a>
-        <a href="/login/">Login</a>
-        <a href="/logout/">Logout</a>
+  <div class="container">
+    <h2>Login - Localiza Pet</h2>
+      {% if msg %}
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+        </symbol>
+    </svg>
+    <div class="alert alert-danger d-flex align-items-center" role="alert">
+      <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+      <div>
+        {{msg}}
+      </div>
     </div>
-    <div class="container">
-        <h1>Localiza Pet</h1>
-        <p>Encontre o seu novo companheiro de quatro patas.</p>
+  {% endif %}
+    <form action="#" method="post">
+      {% csrf_token %}
+      <input type="text" name="username" placeholder="Usuário" required>
+      <input type="password" name="password" placeholder="Senha" required>
+      <input type="submit" value="Entrar">
+    </form>
+    <a href='/cadastro/'>
+      <input type="submit" value="Cadastrar">
+    </a>
+  </div>
 
-        <!-- Formulário para carregar fotos -->
-        <div class="upload-form">
-            <h2>Relate um Animal Perdido</h2>
-            <input type="text" placeholder="Localização (Rua, Bairro)">
-            <input type="date">
-            <input type="file" accept="image/png, image/jpeg">
-            <button>Carregar Foto</button>
-        </div>
-
-        <!-- Feed de imagens de animais perdidos -->
-        <div class="lost-pets-feed">
-            <!-- Aqui você pode exibir as imagens carregadas pelos usuários -->
-            <div class="lost-pet">
-                <img src="caminho/para/imagem1.jpg" alt="Animal Perdido 1">
-                <p>Localização: Rua X, Bairro Y</p>
-                <p>Visto pela última vez em: 01/03/2024</p>
-            </div>
-            <!-- Adicione mais blocos de imagens conforme necessário -->
-        </div>
-
-        <!-- Página Sobre Nós -->
-        <div id="about">
-            <h2>Sobre Nós</h2>
-            <p>Alunos da UNIVEP de Marília se uniram para criar o Localiza Pet, um site dedicado a ajudar ONGs a divulgarem animais disponíveis para adoção. Nosso objetivo é conectar animais em busca de um lar com pessoas amorosas e responsáveis. Junte-se a nós nessa missão!</p>
-        </div>
+  <!-- Modal para exibir informações do animal -->
+  <div id="animalModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <img id="modalImage" src="" alt="Animal Perdido">
+      <p id="modalLocation">Localização: </p>
+      <p id="modalLastSeen">Visto pela última vez em: </p>
     </div>
+  </div>
+
+  <!-- Feed de imagens de animais perdidos -->
+  <div class="lost-pets-feed">
+    <!-- Aqui você pode exibir as imagens carregadas pelos usuários -->
+    <div class="lost-pet" onclick="openModal('caminho/para/imagem1.jpg', 'Rua X, Bairro Y', '01/03/2024')">
+      <img src="caminho/para/imagem1.jpg" alt="Animal Perdido 1">
+    </div>
+    <!-- Adicione mais blocos de imagens conforme necessário -->
+  </div>
+
+  <script src="scripts.js"></script>
 </body>
 </html>
+
