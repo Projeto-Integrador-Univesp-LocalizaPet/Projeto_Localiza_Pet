@@ -3,6 +3,8 @@ from django.contrib.auth import authenticate, login as django_login, logout as d
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from .models import MyFile
+import random
 
 
 # Create your views here.
@@ -30,12 +32,25 @@ def login(request):
 
 @login_required(login_url='/login/')
 def feed(request):
-    return render(request, 'feed.html')
+    return render(request, 'novo_feed.html')
 
 
 @login_required(login_url='/login/')
 def post(request):
-    return render(request, 'teste/post.html')
+    if request.method == 'GET':
+        return render(request, 'post.html')
+    elif request.method == 'POST':  # retorna os arquivos da pagina
+        file = {}
+        file.update(request.FILES)
+        # Salva em uma lista os arquivos retornados pelo metodo POST
+        ret = file["my_file"]
+        name = ''
+        for i in '0123456789':  # cria um numero unico para a postagem
+            name += str(random.randint(0, 9))
+        for i in ret:  # Salva no banco todos os arquivos com o numero unico da postagem
+            mf = MyFile(title=name, arq=i)
+            mf.save()
+    return HttpResponseRedirect('/feed/')
 
 
 @login_required(login_url='/login/')

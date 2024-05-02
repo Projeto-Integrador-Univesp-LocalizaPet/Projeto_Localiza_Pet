@@ -22,3 +22,11 @@ class Bichinho_post(models.Model):
     loc = models.CharField(max_length=255)
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     caract = models.ManyToManyField(Caracteristica)
+
+
+class MyFile(models.Model):
+    title = models.CharField(max_length=20)
+    arq = models.ImageField(upload_to="img")
+
+    def __str__(self) -> str:
+        return self.title
