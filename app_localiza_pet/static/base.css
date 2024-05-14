@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #FFA07A, #FFD700); /* Gradiente de cores laranja e amarelo */
+  }
+  div#conteudo{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  /* Barra de navegação */
+  .navbar {
+      background-color: #f76c24; /* Laranja */
+      overflow: hidden;
+      width: 100%;
+      position: -webkit-sticky; /* Necessário para funcionar no Safari */
+      position: sticky;
+      top: 0;
+  }
+  .navbar a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+  }
+  .navbar a:hover {
+      background-color: #ddd;
+      color: black;
+  }
+  .container {
+    width: 90%;
+    max-width: 400px;
+    background-color: #fff; /* Fundo branco */
+    padding: 40px; /* Aumento da parte branca */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  h2 {
+    text-align: center;
+    color: #ff9800; /* Laranja */
+  }
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff9800; /* Laranja */
+    color: #fff;
+    cursor: pointer;
+  }
+  input[type="submit"]:hover {
+    background-color: #f57c00; /* Laranja mais escuro */
+  }
+
+  
+
+  .card-img-top {
+    max-width: 100px;
+    max-height: 100px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 40px;
+    margin-inline-end: 40px;
+    unicode-bidi: isolate;
+}
