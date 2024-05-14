@@ -65,3 +65,15 @@ body {
   input[type="submit"]:hover {
     background-color: #f57c00; /* Laranja mais escuro */
   }
+
+  
+
+  .card-img-top {
+    max-width: 100px;
+    max-height: 100px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 40px;
+    margin-inline-end: 40px;
+    unicode-bidi: isolate;
+}

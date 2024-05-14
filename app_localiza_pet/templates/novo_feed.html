@@ -1,11 +1,25 @@
 {% extends "base.html" %}
 
 {% block content %}
-
 <section>
-    <div>
-    </div>
-    <div class="container">
+    <div class="row align-items-center">
+        {% for item in animais_postados %}
+            <a href='{% url "post_pet" item.id %}' class="item" data-sr-id="0" style="visibility: visible; opacity: 1; transition: all 0.25s linear 0s, opacity 1s cubic-bezier(0.5, 0, 0, 1) 0s;">
+                    <div class="col">
+                       <div class="card" style="width: 20rem, height:20rem;">
+                            <img src='../media/{{item.foto}}' class="card-img-top" alt="...">
+                            <div class="card-body">
+                                {% if item.opcao == '1' %}
+                                    <p class="card-text">ANIMAL PERDIDO</p>
+                                {% else %}
+                                    <p class="card-text">DISPONIVEL PARA ADOÇÃO</p>
+                                {% endif %}
+                            </div>
+                        </div>                  
+                    </div> 
+            </a>
+        {% endfor %}
     </div>
 </section>
+
 {% endblock content %}
