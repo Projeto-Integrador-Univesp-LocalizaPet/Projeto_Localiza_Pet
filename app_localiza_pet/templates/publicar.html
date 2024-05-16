@@ -1,17 +1,20 @@
 {% extends "base.html" %}
 
+{% block nav %}
+    <h2 class="display-3" style="color: white">Publique um bichinho e encontre ajuda!</h2>
+{% endblock nav %}
+
 {% block content %}
 
 
-<div class="">
-    <h2>Publique um pedido de ajuda</h2>
+<div class="h4">
     <br>
   <form action="{% url 'publicar' %}" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <input type="file" name="my_file">
-    <input type="radio" name="situação" id="eperd" value="0" checked> <label for="eperd" >Animal Perdido</label>
-    <input type="radio" name="situação" id="eadot" value="1"> <label for="eadot">Disponível para adoção</label>
-    <input type="text" name="desc" id="desc" value="Digite uma descrição do bixinho e onde ele se encontra">
+    <input type="radio" name="situação" id="eperd" value="1" checked> <label for="eperd" >Animal Perdido</label>
+    <input type="radio" name="situação" id="eadot" value="0"> <label for="eadot">Disponível para adoção</label>
+    <input type="text" name="desc" id="desc" placeholder="Digite uma descrição do bixinho e onde ele se encontra">
     <input type="submit" value="Enviar">
   </form>
 </div>

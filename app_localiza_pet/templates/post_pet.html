@@ -1,8 +1,25 @@
 {% extends "base.html" %}
 
+{% block nav %}
+         {% if pet.opcao == '1' %}
+            <h2 class="display-3" style="color: white">DISPONIVEL PARA ADOÇÃO</h2>
+         {% else %}
+            <h2 class="display-3" style="color: white">ANIMAL PERDIDO</h2>
+         {% endif %}
+{% endblock nav %}
+
 {% block content %}
-   <img src="../media/{{pet.foto}}" class="img-fluid" alt="...">
-   <article>
-    {{pet.descricao}}
-   </article>
+   <div class='row'>
+      <div class='col'>
+         <img src="../media/{{pet.foto}}" class="img-fluid" alt="...">
+      </div>
+      <div class='col'>
+         {% if pet.opcao == '1' %}
+            <p class="display-1" style="center"><strong>Este animalzinho procura um lar</strong></p>
+         {% else %}
+            <p class="display-1" style="center"><strong>Você viu esse bichinho por ai?</strong></p>
+         {% endif %}
+      <article class="display-6">{{pet.descricao}}</article>
+      </div>
+   </div>
 {% endblock content %}
