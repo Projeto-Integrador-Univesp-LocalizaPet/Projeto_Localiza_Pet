@@ -14,22 +14,47 @@
 
 </head>
 <body>
+
   <header>
-    <h1>Localiza Pet</h1>
-    <p>Encontre o seu novo companheiro de quatro patas.</p>
+    <nav class="nav" style="background-color:#ce955e;"> 
+      <div class="row">
+         <div class="col banner"  style="border-radius: 0px; box-shadow:">
+            <img src="{% static 'bannerFoto1edit .jpg' %}" alt="" style="width: 100%; height: 20vw; object-fit: cover;" class="img position-static top-0 start-0">  
+         </div>
+         <div class="col banner" style="border-radius: 0px; box-shadow:">
+          <img src="{% static 'LocalizaLogBra (1).png' %}" alt="" style="width: 100%; height: 20vw; center " class="position-static top-0 start-0">  
+         </div>
+         <div class="col banner" style="border-radius: 0px; box-shadow:">
+          <img src="{% static 'bannerFoto6.jpg' %}" alt="" style="width: 100%; height: 20vw; object-fit: cover;" class="img position-static top-0 end-100">  
+         </div>
+         <div class="col banner" style="border-radius: 0px; box-shadow:">          
+          <img src="{% static 'bannerFoto2.jpg' %}" alt="" style="width: 100%; height: 20vw; object-fit: cover;" class="img position-static top-0 end-0">
+         </div>
+      </div>
+                    
+    </nav>    
     <nav class="navbar">
-      <a href="/feed/">Início</a>
-      <a href="/publicar/">Publicar</a>
-      <a href="#about">Sobre Nós</a>
-      <a href="/login/">Login</a>
-      <a href="/logout/">Logout</a>
+      <a class="fs-2" href="/feed/">Início</a>
+      <a class="fs-2" href="/publicar/">Publicar</a>
+      <!--<a class="fs-2" href="#about">Sobre Nós</a>-->
+      <!--<a class="fs-2" href="/login/">Login</a>
+      <a class="fs-2" href="/logout/">Logout</a> -->
+      {% if request.user.is_authenticated == False %}
+        <a class="fs-2" href="/login/">Login</a>
+      {% else %}
+        <a class="fs-2" href="/logout/">Logout</a>
+      {% endif %}
     </nav>
-
+    <nav class = "titulo">
+      {% block nav %}
+      {% endblock nav %}
+    </nav>
   </header>
-
+  <br>
+  <br>
   <div class="container">
-  {% block content %}  
-  {% endblock content %}
+    {% block content %}  
+    {% endblock content %}
   </div>
 </body>
 </html>
