@@ -1,0 +1,1 @@
+web: python manager.py migrar && gunicorn Localiza_pet.wsg
