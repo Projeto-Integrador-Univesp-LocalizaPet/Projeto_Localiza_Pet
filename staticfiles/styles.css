@@ -1,0 +1,62 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F4D882; /* Fundo  */
+    color: #333; /* Texto preto */
+}
+/* Barra de navegação */
+.navbar {
+    background-color: #f76c24; /* Laranja */
+    overflow: hidden;
+}
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+/* Conteúdo principal */
+.container {
+    padding: 20px;
+}
+/* Formulário para carregar fotos */
+.upload-form {
+    margin-top: 20px;
+}
+.upload-form input[type="text"],
+.upload-form input[type="date"],
+.upload-form input[type="file"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.upload-form button {
+    background-color: #f76c24;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+/* Feed de imagens de animais perdidos */
+.lost-pets-feed {
+    margin-top: 20px;
+    height: 240px;
+    width: 200px;
+}
+.lost-pet {
+    border: 1px solid #f76c24; /* Borda laranja */
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.lost-pet img {
+    max-width: 100%;
+    height: auto;
+}
