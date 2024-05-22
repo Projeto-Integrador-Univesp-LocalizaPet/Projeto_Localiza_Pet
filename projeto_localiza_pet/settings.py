@@ -78,6 +78,18 @@ WSGI_APPLICATION = 'projeto_localiza_pet.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'DOHPLpJNfauqcvrDDKWEoFPedtlxpQyH',
+        'HOST': 'viaduct.proxy.rlwy.net',
+        'PORT': '29996',
+    }
+}
+
 # DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.mysql',
@@ -89,16 +101,16 @@ WSGI_APPLICATION = 'projeto_localiza_pet.wsgi.application'
 #    }
 # }
 
-DATABASES = {   # DB na nuvem, lembrar de trocar antes de fazer o commit
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'railway',
-        'USER': 'root',
-        'PASSWORD': 'RnzoqlxpZHjfFWCNcfDvmvPQKUhnweQR',
-        'HOST': 'roundhouse.proxy.rlwy.net',
-        'PORT': '29122'
-    }
-}
+# DATABASES = {   # DB na nuvem, lembrar de trocar antes de fazer o commit
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': 'railway',
+#        'USER': 'root',
+#        'PASSWORD': 'RnzoqlxpZHjfFWCNcfDvmvPQKUhnweQR',
+#        'HOST': 'roundhouse.proxy.rlwy.net',
+#        'PORT': '29122'
+#    }
+# }
 
 
 # Password validation
