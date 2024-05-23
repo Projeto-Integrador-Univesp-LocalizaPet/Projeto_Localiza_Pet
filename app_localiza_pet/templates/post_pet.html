@@ -9,12 +9,13 @@
 {% endblock nav %}
 
 {% block content %}
+{% csrf_token %}
    <div class='row'>
       <div class='col'>
          <img src="../media/{{pet.foto}}" class="img-fluid" alt="...">
       </div>
       <div class='col'>
-         {% if pet.opcao == '1' %}
+         {% if pet.opcao == '0' %}
             <p class="display-1" style="center"><strong>Este animalzinho procura um lar</strong></p>
          {% else %}
             <p class="display-1" style="center"><strong>Você viu esse bichinho por ai?</strong></p>
