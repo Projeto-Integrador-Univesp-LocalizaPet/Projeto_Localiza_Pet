@@ -1,13 +1,16 @@
-# fly.toml app configuration file generated for projeto-localiza-pet on 2024-05-21T06:27:51-03:00
+# fly.toml app configuration file generated for localiza-pet on 2024-05-21T22:43:21-03:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'projeto-localiza-pet'
+app = 'localiza-pet'
 primary_region = 'gru'
 console_command = '/code/manage.py shell'
 
 [build]
+
+[deploy]
+  release_command = 'python manage.py migrate --noinput'
 
 [env]
   PORT = '8000'
